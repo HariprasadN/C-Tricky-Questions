@@ -1,0 +1,376 @@
+//add integer number
+#include <stdio.h>
+void main()
+{
+    int a;
+    clrscr();
+    printf("Enter integer number: ");
+    scanf("%d", &a);
+    printf("you entered: %d", a);
+    getch();
+}
+
+
+//add two numbers
+#include <stdio.h>
+void main()
+{
+    int a, b, c;
+    clrscr();
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+    c = a + b;
+    printf("%d + %d = %d", a, b, c);
+    getch();
+}
+
+//print largest of three numbers
+#include <stdio.h>
+ 
+int main()
+{
+ int a, b, c;
+ 
+ printf("Please Enter three different values\n");
+ scanf("%d %d %d", &a, &b, &c);
+ 
+ if (a > b && a > c) 
+  {
+   printf("\n%d is Greater Than both %d and %d", a, b, c); 
+  }
+ else if (b > a && b > c) 
+  {
+   printf("\n%d is Greater Than both %d and %d", b, a, c);
+  }
+ else if (c > a && c > b) 
+  {
+   printf("\n%d is Greater Than both %d and %d", c, a, b);
+  }
+ else 
+  {
+   printf("\nEither any two values or all the three values are equal");
+  } 
+ return 0;
+}
+
+
+//print largest of four numbers
+#include <stdio.h>
+ 
+int main()
+{
+ int a, b, c, d;
+ 
+ printf("Please Enter three different values\n");
+ scanf("%d %d %d %d", &a, &b, &c, &d);
+ 
+ if (a > b && a > c && a > d) 
+  {
+   printf("\n%d is Greater Than both %d %d %d", a, b, c, d); 
+  }
+ else if (b > a && b > c && b > d) 
+  {
+   printf("\n%d is Greater Than both %d %d %d", b, a, c, d);
+  }
+ else if (c > a && c > b && c > d) 
+  {
+   printf("\n%d is Greater Than both %d and %d", c, a, b, d);
+  }
+ else if (d > a && d > b && d > c) 
+  {
+   printf("\n%d is Greater Than both %d %d %d", d, a, b, c);
+  }
+ else
+  {
+   printf("\nEither the values");
+  } 
+ return 0;
+}
+
+
+#include <stdio.h>
+void main()
+{
+    int a=1, b=6, c=4, d=5, m1, m2, largest;
+    clrscr();
+    m1 = (a>b?a:b);
+    m2 = (c>d?c:d);
+    largest = (m1>m2?m1:m2);	
+    printf("largest: %d", largest);
+    getch();
+}
+
+//find largest and second largest number using for and if-else
+#include<stdio.h>
+void main()
+{
+int i,lar=0,sec_lar=0,num;
+clrscr();
+printf("please enter the numbers: ");
+for(i=0;i<4;i++)
+{
+  scanf("%d",&num);
+  if(num>lar)
+  {
+    sec_lar = lar;
+    lar= num;
+  }else
+  if(num>sec_lar)
+  {
+    sec_lar=num;
+  }
+  printf("largest number %d", lar);
+  printf("second largest number %d", sec_lar);
+  getch();
+}
+}
+
+//calculator example using switch case
+#include <stdio.h>
+void main()
+{
+    int a, b, choice;
+    clrscr();
+    printf("enter the operator(+,-,*,/): ");
+    scanf("%d", &choice);
+    printf("enter two operand: ");
+    scanf("%d %d", &a, &b);
+    switch(choice)
+    {
+      case 1:
+             printf("%d+%d=%d",a,b, a+b);
+             break;
+      case 2:
+             printf("%d-%d=%d",a,b, a-b);
+             break;
+      case 3:
+             printf("%d*%d=%d",a,b, a*b);
+             break;
+      case 4:
+             printf("%d/%d=%d",a,b, a/b);
+             break;
+      default: printf("wrong choice");
+    }
+    getch();
+}
+
+
+//simple interest
+#include<stdio.h>
+ 
+int main() {
+   int amount, rate, time, si;
+ 
+   printf("\nEnter Principal Amount : ");
+   scanf("%d", &amount);
+ 
+   printf("\nEnter Rate of Interest : ");
+   scanf("%d", &rate);
+ 
+   printf("\nEnter Period of Time   : ");
+   scanf("%d", &time);
+ 
+   si = (amount * rate * time) / 100;
+   printf("\nSimple Interest : %d", si);
+ 
+   return(0);
+}
+
+//find n natural numbers
+#include <stdio.h>
+int main()
+{
+    int n, i = 1, sum = 0;
+    
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    while ( i <=n )
+    {
+        sum += i;
+        ++i;
+    }
+
+    printf("Sum = %d",sum);
+
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int n, i, sum = 0;
+    
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+
+    for(i=1; i <= n; ++i)
+    {
+        sum += i;   // sum = sum+i;
+    }
+
+    printf("Sum = %d",sum);
+
+    return 0;
+}
+
+
+// Check if a Number is Positive or Negative
+
+#include <stdio.h>
+int main()
+{
+    double number;
+
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+
+    if (number <= 0.0)
+    {
+        if (number == 0.0)
+            printf("You entered 0.");
+        else
+            printf("You entered a negative number.");
+    }
+    else
+        printf("You entered a positive number.");
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    double number;
+
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+
+    // true if number is less than 0
+    if (number < 0.0)
+        printf("You entered a negative number.");
+
+    // true if number is greater than 0
+    else if ( number > 0.0)
+        printf("You entered a positive number.");
+
+    // if both test expression is evaluated to false
+    else
+        printf("You entered 0.");
+    return 0;
+}
+
+
+//Program to Check Even or Odd
+
+
+#include <stdio.h>
+int main()
+{
+    int number;
+
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    // True if the number is perfectly divisible by 2
+    if(number % 2 == 0)
+        printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+
+    return 0;
+}
+
+//Reverse an Integer
+
+#include <stdio.h>
+int main()
+{
+    int n, reversedNumber = 0, remainder;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    while(n != 0)
+    {
+        remainder = n%10;
+        reversedNumber = reversedNumber*10 + remainder;
+        n /= 10;
+    }
+
+    printf("Reversed Number = %d", reversedNumber);
+
+    return 0;
+}
+
+//Program to Check Prime Number
+
+#include <stdio.h>
+int main()
+{
+    int n, i, flag = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+
+    for(i=2; i<=n/2; ++i)
+    {
+        // condition for nonprime number
+        if(n%i==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+
+    if (flag==0)
+        printf("%d is a prime number.",n);
+    else
+        printf("%d is not a prime number.",n);
+    
+    return 0;
+}
+
+//Program to Check Whether a Character is an Alphabet or not
+
+#include <stdio.h>
+int main()
+{
+    char c;
+    printf("Enter a character: ");
+    scanf("%c",&c);
+
+    if( (c>='a' && c<='z') || (c>='A' && c<='Z'))
+        printf("%c is an alphabet.",c);
+    else
+        printf("%c is not an alphabet.",c);
+
+    return 0;
+}
+
+//Program to Check Palindrome
+
+#include <stdio.h>
+int main()
+{
+    int n, reversedInteger = 0, remainder, originalInteger;
+
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    originalInteger = n;
+
+    // reversed integer is stored in variable 
+    while( n!=0 )
+    {
+        remainder = n%10;
+        reversedInteger = reversedInteger*10 + remainder;
+        n /= 10;
+    }
+
+    // palindrome if orignalInteger and reversedInteger are equal
+    if (originalInteger == reversedInteger)
+        printf("%d is a palindrome.", originalInteger);
+    else
+        printf("%d is not a palindrome.", originalInteger);
+    
+    return 0;
+}
