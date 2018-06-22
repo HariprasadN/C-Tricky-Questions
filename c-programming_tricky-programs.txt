@@ -1,3 +1,29 @@
+//hello world program
+#include <stdio.h>
+void main()
+{
+    clrscr();
+      printf("Hello world");
+    getch();
+}
+
+//multiple main method 
+#include <stdio.h>
+#include<conio.h>
+void main()
+{
+    clrscr();
+     printf("1 hello world");
+     fun();
+    getch();
+}
+#define main fun
+int main()
+{
+   printf("2 hello world");
+   return 0;
+}
+
 //add integer number
 #include <stdio.h>
 void main()
