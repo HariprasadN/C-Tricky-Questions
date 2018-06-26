@@ -1,0 +1,40 @@
+Have you ever wondered how to write a C program without a main function? Can a C program execute with a main function? Is it possible to do that?
+
+Well, the answer is YES! There can be a C program without a main function. Here is the source code of the program without a main function:
+
+#include<stdio.h>
+
+#define decode(s,t,u,m,p,e,d) m##s##u##t
+
+#define begin decode(a,n,i,m,a,t,e)
+
+int begin()
+
+{
+
+printf(” hello “);
+
+}
+
+The above program runs perfectly fine even without a main function. But how? What’s the logic behind it? How can we have a C program working without a main function. Read on to find out the answer…
+
+Here, we are using a preprocessor directive called #define with arguments to give an impression that the program runs without the main function. However, in reality it runs with a hidden main function in it.
+
+NOTE: A Preprocessor is program which processes the source code before compilation.
+
+The ‘##‘ operator is called the token pasting or token merging operator. That is, we can merge two or more characters with it. Now, look at the 2nd line of program:
+
+#define decode(s,t,u,m,p,e,d) m##s##u##t
+
+What is the preprocessor doing here? The macro decode(s,t,u,m,p,e,d) is being expanded as “msut” (The ## operator merges m, s, u and t into msut). The logic is, when you pass (s,t,u,m,p,e,d) as argument it merges the 4th, 1st, 3rd and the 2nd characters (tokens).
+
+Now, look at the third line of the program:
+
+#define begin decode(a,n,i,m,a,t,e)
+
+Here the preprocessor replaces the macro “begin” with the expansion decode(a,n,i,m,a,t,e). According to the macro definition in the previous line, the argument must be expanded so that the 4th, 1st, 3rd and the 2nd characters must be merged. In the argument (a,n,i,m,a,t,e) 4th, 1st, 3rd and the 2nd characters are ‘m’, ‘a’, ‘i’ and ‘n’.
+
+So the third line “int begin” is replaced by “int main” by the preprocessor before the program is passed on to the compiler. That’s it.
+
+The bottom line is that, there can never exist a C program without a main function. Here, we are just playing a gimmick that makes us believe that the program runs without the main, but there actually exists a hidden main function in the program. Here, we are using the preprocessor directive to intelligently replace the word “begin” by “main”. In simple words: int begin = int main.
+
