@@ -7,6 +7,55 @@ void main()
     getch();
 }
 
+//c-programming without main method
+There are many ways to do it , but everything you do must include the main(not directly) indirectly, for example:
+
+Way 1: Using Macros
+
+#include<stdio.h>
+
+#define begin main
+
+int begin() {
+
+printf("Hello");
+
+return (0);
+
+}
+
+Way 2: Using #Token merging Operators
+
+#include<stdio.h>
+
+#define begin m##a##i##n
+
+void begin() {
+
+printf("Hello");
+
+}
+
+****NOTE:-
+
+The ‘##‘ operator is called the token pasting or token merging operator.
+That is we can merge two or more characters with it.
+Way 3:Using Augmented Macro(A little Complex)
+
+#include<stdio.h>
+
+#define begin(m,a,i,n) m##a##i##n
+
+#define start begin(m,a,i,n)
+
+void start() {
+
+printf("Hello");
+
+}
+
+*****Better to avoid Augmented macro.
+
 //multiple main method 
 #include<stdio.h>
 #include<conio.h>
