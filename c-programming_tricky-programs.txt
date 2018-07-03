@@ -56,6 +56,26 @@ printf("Hello");
 
 *****Better to avoid Augmented macro.
 
+way 3:
+TEST1.c
+#include<stdio.h>
+void foo()
+{
+  printf("from TEST1.c");
+}
+
+TEST2.c
+#include "TEST1.c"
+#include<stdio.h>
+int main()
+{
+  clrscr();
+  printf("from TEST2.c");
+  foo();
+  getch();
+  return 0;
+}
+
 //multiple main method 
 #include<stdio.h>
 #include<conio.h>
