@@ -689,3 +689,33 @@ main()
   printf("\n Item does not exist");
   getch();
 }
+
+//find accurance of a digit in a number
+
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+ int num,n,i=0,k;
+ clrscr();
+ printf("Enter a number");
+ scanf("%d",&num);
+ printf("Enter a number to be searched");
+ scanf("%d",&n);
+ do
+ {
+   k=num%10;
+   num=num/10;
+   if(k==n)
+   {
+     i++;
+   }
+ }while(num!=0);
+ printf("%d",i);
+ getch();
+}
+
+//output
+Enter a number 1112
+Enter a number to be searched 1
+3
