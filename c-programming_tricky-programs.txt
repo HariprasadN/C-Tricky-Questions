@@ -689,3 +689,50 @@ main()
   printf("\n Item does not exist");
   getch();
 }
+
+//create a binary to a decimal integer in do-while
+
+#include<stdio.h>
+main()
+{
+ int bin,rem,s=0,i=0;
+ clrscr();
+ printf("Enter a number");
+ scanf("%d",&rem);
+ do
+ {
+   rem=bin%10;
+   s=s+pow(2,i)+rem;
+   i++;
+   bin=bin/10;
+ }while(bin!=0);
+ printf("%d",s);
+ getch();
+}
+
+output:
+Enter a number 10101
+34
+
+//find the factorial of a non-negative number
+#include<stdio.h>
+main()
+{
+  int fact,i,n;
+  printf("Input number");
+  scanf("%d",&n);
+  if(n<0)
+   printf("Invalid input");
+   else
+   {
+     fact=1;
+     for(i=1;i<=n;i++)
+     fact=fact*i;
+     printf("\n fact %d %d",n,fact);
+   }
+   getch();
+}
+
+output:
+Input number 7
+fact 7 = 5040
